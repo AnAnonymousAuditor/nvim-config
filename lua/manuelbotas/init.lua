@@ -1,3 +1,3 @@
 require("manuelbotas.remap")
-require("manuelbotas.packer")
+require("manuelbotas.lazy")
 require("manuelbotas.set")
