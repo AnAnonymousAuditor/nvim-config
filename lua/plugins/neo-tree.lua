@@ -11,7 +11,7 @@ return {
       "MunifTanjim/nui.nvim",
       -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
     },
-    config = {
+    opts = {
         filesystem = {
             follow_current_file = true,
             hijack_netrw_behavior = "open_current"
