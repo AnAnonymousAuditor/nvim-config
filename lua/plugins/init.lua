@@ -18,6 +18,7 @@ return {
 
   'mbbill/undotree',
   'tpope/vim-fugitive',
+  'tmsvg/pear-tree',
 
   {
 	  'VonHeikemen/lsp-zero.nvim',
