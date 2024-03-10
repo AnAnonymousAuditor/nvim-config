@@ -1,7 +1,11 @@
 return {
 
   {
-	  'nvim-telescope/telescope.nvim', version = "0.1.5", dependencies = {'nvim-lua/plenary.nvim'}
+	  'nvim-telescope/telescope.nvim',
+      version = "0.1.x",
+      dependencies = {
+          'nvim-lua/plenary.nvim'
+      }
   },
 
   {
@@ -13,12 +17,22 @@ return {
   },
 
   {
-      'nvim-treesitter/nvim-treesitter'--, {build = ':TSUpdate'}
+      'nvim-treesitter/nvim-treesitter',
+      build = ':TSUpdate'
   },
 
   'mbbill/undotree',
   'tpope/vim-fugitive',
   'tmsvg/pear-tree',
+
+  {
+      'ThePrimeagen/harpoon',
+      branch = 'harpoon2',
+      dependencies = {
+          'nvim-lua/plenary.nvim',
+          'nvim-telescope/telescope.nvim'
+      }
+  },
 
   {
 	  'VonHeikemen/lsp-zero.nvim',
