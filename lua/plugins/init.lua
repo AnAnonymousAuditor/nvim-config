@@ -11,9 +11,26 @@ return {
   {
 	  'rose-pine/neovim',
 	  name = 'rose-pine',
+      --[[
 	  config = function()
 		  vim.cmd('colorscheme rose-pine')
 	  end
+      --]]
+  },
+
+  {
+      'almo7aya/neogruvbox.nvim',
+      name = 'neogruvbox',
+      ----[[
+      config = function ()
+        vim.cmd('colorscheme neogruvbox')
+      end
+      --]]
+  },
+
+  {
+      'nvim-lualine/lualine.nvim',
+      dependencies = { 'nvim-tree/nvim-web-devicons' }
   },
 
   {
