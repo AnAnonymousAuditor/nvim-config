@@ -1,5 +1,6 @@
 Plugin manager:
 - [lazy.nvim](https://github.com/folke/lazy.nvim)
+
 List of plugins:
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 - [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
