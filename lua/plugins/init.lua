@@ -21,11 +21,18 @@ return {
   {
       'almo7aya/neogruvbox.nvim',
       name = 'neogruvbox',
-      ----[[
+      --[[
       config = function ()
         vim.cmd('colorscheme neogruvbox')
       end
       --]]
+  },
+
+  {
+      "ellisonleao/gruvbox.nvim",
+      priority = 1000 ,
+      config = true,
+      opts = ...
   },
 
   {
