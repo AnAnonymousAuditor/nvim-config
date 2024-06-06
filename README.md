@@ -14,3 +14,4 @@ List of plugins:
 - [lsp-zero.nvim](https://github.com/VonHeikemen/lsp-zero.nvim)
 - [alpha-nvim](https://github.com/goolord/alpha-nvim)
 - [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)
+- [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim)
