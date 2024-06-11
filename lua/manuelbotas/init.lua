@@ -2,7 +2,31 @@ require("manuelbotas.set")
 require("manuelbotas.remap")
 require("manuelbotas.lazy_init")
 
-vim.api.nvim_create_autocmd('LspAttach', {
+local augroup = vim.api.nvim_create_augroup
+local manuelGroup = augroup('ManuelBotas', {})
+
+local autocmd = vim.api.nvim_create_autocmd
+local yankGroup = augroup('HighlightYank', {})
+
+autocmd('TextYankPost', {
+    group = yankGroup,
+    pattern = '*',
+    callback = function ()
+        vim.highlight.on_yank({
+            higroup = 'IncSearch',
+            timeout = 40
+        })
+    end
+})
+
+autocmd('BufWritePre', {
+    group = manuelGroup,
+    pattern = '*',
+    command = [[%s/\s\+$//e]]
+})
+
+autocmd('LspAttach', {
+    group = manuelGroup,
     desc = 'LSP actions',
     callback = function(event)
         local opts = { buffer = event.buf }
