@@ -1,3 +1,5 @@
+Shamelessly stolen from [ThePrimeagen/init.lua](https://github.com/ThePrimeagen/init.lua)
+
 Plugin manager:
 - [lazy.nvim](https://github.com/folke/lazy.nvim)
 
