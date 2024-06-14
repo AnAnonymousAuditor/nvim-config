@@ -11,7 +11,7 @@ if not vim.uv.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-return require('lazy').setup({
+require('lazy').setup({
     spec = 'manuelbotas.lazy',
     change_detection = { notify = false }
 })

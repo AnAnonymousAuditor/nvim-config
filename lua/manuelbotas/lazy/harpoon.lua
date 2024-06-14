@@ -5,7 +5,7 @@ return {
         'nvim-lua/plenary.nvim',
         'nvim-telescope/telescope.nvim'
     },
-    config = function ()
+    config = function()
         local harpoon = require("harpoon")
 
         -- REQUIRED
@@ -28,7 +28,7 @@ return {
         vim.keymap.set("n", "<C-S-P>", function() harpoon:list():prev() end)
         vim.keymap.set("n", "<C-S-N>", function() harpoon:list():next() end)
 
-        vim.keymap.set("n", "<C-x>", function () harpoon:list():clear() end)
+        vim.keymap.set("n", "<C-x>", function() harpoon:list():clear() end)
 
         -- basic telescope configuration
         local conf = require("telescope.config").values
@@ -49,6 +49,6 @@ return {
         end
 
         vim.keymap.set("n", "<C-e>", function() toggle_telescope(harpoon:list()) end,
-        { desc = "Open harpoon window" })
+            { desc = "Open harpoon window" })
     end
 }
