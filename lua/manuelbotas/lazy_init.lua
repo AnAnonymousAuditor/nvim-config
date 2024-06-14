@@ -13,8 +13,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
     spec = 'manuelbotas.lazy',
-    {
-        checker = { enabled = true },
-        change_detection = { notify = false }
-    }
+    checker = { enabled = true },
+    change_detection = { notify = false }
 })
