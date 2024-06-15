@@ -26,7 +26,7 @@ return {
         -- Customize formatters
         formatters = {
             shfmt = {
-                prepend_args = { "-i", "2" },
+                prepend_args = { "-i", "4" },
             },
             stylua = {
                 prepend_args = { "--indent-type", "Spaces" },
