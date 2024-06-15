@@ -7,7 +7,7 @@ return {
                 "selene",
             },
         }
-        vim.api.nvim_create_autocmd({ "InsertLeave", "BufWritePost" }, {
+        vim.api.nvim_create_autocmd({ "BufEnter", "InsertLeave", "BufWritePost" }, {
             callback = function()
                 lint.try_lint()
             end,

@@ -39,6 +39,9 @@ return {
                             capabilities = lsp_capabilities,
                             settings = {
                                 Lua = {
+                                    diagnostics = {
+                                        globals = { "vim"}
+                                    },
                                     runtime = { version = "Lua 5.1" },
                                 },
                             },
