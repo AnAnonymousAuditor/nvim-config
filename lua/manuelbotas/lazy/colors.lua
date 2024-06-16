@@ -4,9 +4,18 @@ return {
         name = "rose-pine",
     },
 
+    "almo7aya/neogruvbox.nvim",
     {
-        "almo7aya/neogruvbox.nvim",
-        name = "neogruvbox",
+        "sainnhe/gruvbox-material",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            local g = vim.g
+            g.gruvbox_material_background = "medium"
+            g.gruvbox_material_foreground = "material"
+            g.gruvbox_material_enable_bold = true
+            g.gruvbox_material_statusline_style = "default"
+        end,
     },
 
     {
