@@ -26,7 +26,7 @@ return {
             require("fidget").setup({})
             require("mason").setup()
             require("mason-lspconfig").setup({
-                ensure_installed = { "rust_analyzer" },
+                -- ensure_installed = { "rust_analyzer" },
                 handlers = {
                     function(server)
                         require("lspconfig")[server].setup({
@@ -40,7 +40,7 @@ return {
                             settings = {
                                 Lua = {
                                     diagnostics = {
-                                        globals = { "vim"}
+                                        globals = { "vim" },
                                     },
                                     runtime = { version = "Lua 5.1" },
                                 },

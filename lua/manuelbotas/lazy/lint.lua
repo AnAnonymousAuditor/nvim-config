@@ -6,6 +6,9 @@ return {
             lua = {
                 "selene",
             },
+            sh = {
+                "shellcheck",
+            },
         }
         vim.api.nvim_create_autocmd({ "BufEnter", "InsertLeave", "BufWritePost" }, {
             callback = function()
