@@ -25,7 +25,7 @@ return {
         require("fidget").setup({})
         require("mason").setup()
         require("mason-lspconfig").setup({
-            -- ensure_installed = { "rust_analyzer" },
+            ensure_installed = { "lua_ls" },
             handlers = {
                 function(server)
                     require("lspconfig")[server].setup({
