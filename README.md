@@ -9,7 +9,6 @@ List of plugins:
 - [cellular-automaton.nvim](https://github.com/eandrju/cellular-automaton.nvim)
 - [conform.nvim](https://github.com/stevearc/conform.nvim)
 - [copilot.lua](https://github.com/zbirenbaum/copilot.lua)
-- [vim-fugitive](https://github.com/tpope/vim-fugitive)
 - [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
 - [harpoon](https://github.com/ThePrimeagen/harpoon/tree/harpoon2)
 - [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
@@ -25,6 +24,7 @@ List of plugins:
 - [treesj](https://github.com/Wansmer/treesj)
 - [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
 - [undotree](https://github.com/mbbill/undotree)
+- [which-key](https://github.com/folke/which-key.nvim)
 
 LSP setup:
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
