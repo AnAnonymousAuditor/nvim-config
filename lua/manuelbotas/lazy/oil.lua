@@ -8,6 +8,6 @@ return {
     },
     config = function(_, opts)
         require("oil").setup(opts)
-        vim.keymap.set("n", "<leader>pv", vim.cmd.Oil)
+        vim.keymap.set("n", "<leader>o", vim.cmd.Oil, { desc = "Oil" })
     end,
 }

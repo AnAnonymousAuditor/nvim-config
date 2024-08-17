@@ -37,16 +37,22 @@ autocmd("LspAttach", {
     group = manuelGroup,
     desc = "LSP actions",
     callback = function(event)
-        local opts = { buffer = event.buf }
-        vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-        vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-        vim.keymap.set("n", "<leader>vws", vim.lsp.buf.workspace_symbol, opts)
-        vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float, opts)
-        vim.keymap.set("n", "<leader>vca", vim.lsp.buf.code_action, opts)
-        vim.keymap.set("n", "<leader>vrr", vim.lsp.buf.references, opts)
-        vim.keymap.set("n", "<leader>vrn", vim.lsp.buf.rename, opts)
-        vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
-        vim.keymap.set("n", "}d", vim.diagnostic.goto_next, opts)
-        vim.keymap.set("n", "{d", vim.diagnostic.goto_prev, opts)
+        local ts_builtin = require("telescope.builtin")
+        local lspmap = function(keys, func, desc, mode)
+            mode = mode or "n"
+            vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
+        end
+        lspmap("K", vim.lsp.buf.hover, "Symbol info (hover)")
+        lspmap("{d", vim.diagnostic.goto_prev, "Previous diagnostic")
+        lspmap("}d", vim.diagnostic.goto_next, "Next diagnostic")
+        lspmap("<leader>gr", ts_builtin.lsp_references, "Goto references")
+        lspmap("<leader>gi", ts_builtin.lsp_implementations, "Goto implementations")
+        lspmap("<leader>gd", ts_builtin.lsp_definitions, "Goto definition")
+        lspmap("<leader>gD", vim.lsp.buf.declaration, "Goto declaration")
+        lspmap("<leader>cd", ts_builtin.lsp_document_symbols, "List document symbols")
+        lspmap("<leader>cw", ts_builtin.lsp_dynamic_workspace_symbols, "List workspace symbols")
+        lspmap("<leader>ca", vim.lsp.buf.code_action, "Select code action")
+        lspmap("<leader>cr", vim.lsp.buf.rename, "Rename symbol")
+        lspmap("<C-h>", vim.lsp.buf.signature_help, "Signature help", "i")
     end,
 })
