@@ -24,6 +24,7 @@ List of plugins:
 - [treesj](https://github.com/Wansmer/treesj)
 - [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
 - [undotree](https://github.com/mbbill/undotree)
+- [vimtex](https://github.com/lervag/vimtex)
 - [which-key](https://github.com/folke/which-key.nvim)
 
 LSP setup:

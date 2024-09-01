@@ -42,9 +42,6 @@ autocmd("LspAttach", {
             mode = mode or "n"
             vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
         end
-        lspmap("K", vim.lsp.buf.hover, "Symbol info (hover)")
-        lspmap("{d", vim.diagnostic.goto_prev, "Previous diagnostic")
-        lspmap("}d", vim.diagnostic.goto_next, "Next diagnostic")
         lspmap("<leader>gr", ts_builtin.lsp_references, "Goto references")
         lspmap("<leader>gi", ts_builtin.lsp_implementations, "Goto implementations")
         lspmap("<leader>gd", ts_builtin.lsp_definitions, "Goto definition")
@@ -55,5 +52,12 @@ autocmd("LspAttach", {
         lspmap("<leader>ca", vim.lsp.buf.code_action, "Select code action")
         lspmap("<leader>cr", vim.lsp.buf.rename, "Rename symbol")
         lspmap("<C-h>", vim.lsp.buf.signature_help, "Signature help", "i")
+        lspmap("K", vim.lsp.buf.hover, "Symbol info (hover)")
+        lspmap("{d", function()
+            vim.diagnostic.jump({ count = -1, float = true })
+        end, "Previous diagnostic")
+        lspmap("}d", function()
+            vim.diagnostic.jump({ count = 1, float = true })
+        end, "Next diagnostic")
     end,
 })

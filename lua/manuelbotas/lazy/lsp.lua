@@ -13,6 +13,7 @@ return {
         "j-hui/fidget.nvim",
     },
     config = function()
+        local lspconfig = require("lspconfig")
         local cmp = require("cmp")
         local cmp_lsp = require("cmp_nvim_lsp")
         local lsp_capabilities = vim.tbl_deep_extend(
@@ -28,40 +29,51 @@ return {
             ensure_installed = { "lua_ls" },
             handlers = {
                 function(server)
-                    require("lspconfig")[server].setup({
+                    lspconfig[server].setup({
                         capabilities = lsp_capabilities,
                     })
                 end,
-                ["lua_ls"] = function()
-                    local lspconfig = require("lspconfig")
-                    lspconfig.lua_ls.setup({
-                        capabilities = lsp_capabilities,
-                        settings = {
-                            Lua = {
-                                diagnostics = {
-                                    globals = { "vim" },
-                                },
-                                runtime = { version = "Lua 5.1" },
-                            },
-                        },
-                    })
-                end,
+                -- ["lua_ls"] = function()
+                --     lspconfig.lua_ls.setup({
+                --         capabilities = lsp_capabilities,
+                --     })
+                -- end,
             },
         })
 
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
+        local luasnip = require("luasnip")
 
         cmp.setup({
             snippet = {
                 expand = function(args)
-                    require("luasnip").lsp_expand(args.body)
+                    luasnip.lsp_expand(args.body)
                 end,
             },
             mapping = cmp.mapping.preset.insert({
                 ["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
                 ["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
-                ["<Tab>"] = cmp.mapping.confirm({ select = true }),
                 ["<C-Space>"] = cmp.mapping.complete(),
+                ["<Tab>"] = cmp.mapping(function(fallback)
+                    if cmp.visible() then
+                        if luasnip.expandable() then
+                            luasnip.expand()
+                        else
+                            cmp.confirm({ select = true })
+                        end
+                    elseif luasnip.locally_jumpable(1) then
+                        luasnip.jump(1)
+                    else
+                        fallback()
+                    end
+                end, { "i", "s" }),
+                ["<S-Tab>"] = cmp.mapping(function(fallback)
+                    if luasnip.locally_jumpable(-1) then
+                        luasnip.jump(-1)
+                    else
+                        fallback()
+                    end
+                end, { "i", "s" }),
             }),
             sources = cmp.config.sources({
                 { name = "nvim_lsp" },
