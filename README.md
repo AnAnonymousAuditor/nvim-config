@@ -5,7 +5,6 @@ Plugin manager:
 - [lazy.nvim](https://github.com/folke/lazy.nvim)
 
 List of plugins:
-- [alpha-nvim](https://github.com/goolord/alpha-nvim)
 - [cellular-automaton.nvim](https://github.com/eandrju/cellular-automaton.nvim)
 - [conform.nvim](https://github.com/stevearc/conform.nvim)
 - [copilot.lua](https://github.com/zbirenbaum/copilot.lua)
