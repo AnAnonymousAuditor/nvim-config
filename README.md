@@ -19,6 +19,7 @@ List of plugins:
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [oil.nvim](https://github.com/stevearc/oil.nvim)
 - [pear-tree](https://github.com/tmsvg/pear-tree)
+- [render-markdown](https://github.com/MeanderingProgrammer/render-markdown.nvim)
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 - [treesj](https://github.com/Wansmer/treesj)
 - [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
