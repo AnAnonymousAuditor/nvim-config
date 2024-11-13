@@ -4,7 +4,6 @@ return {
         name = "rose-pine",
     },
 
-    "almo7aya/neogruvbox.nvim",
     {
         "sainnhe/gruvbox-material",
         lazy = false,
