@@ -1,10 +1,7 @@
-Shamelessly stolen from [ThePrimeagen/init.lua](https://github.com/ThePrimeagen/init.lua)
-(plus some stuff from [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim))
-
-Plugin manager:
+### Plugin manager:
 - [lazy.nvim](https://github.com/folke/lazy.nvim)
 
-List of plugins:
+### List of plugins:
 - [cellular-automaton.nvim](https://github.com/eandrju/cellular-automaton.nvim)
 - [nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)
 - [Comment.nvim](https://github.com/numToStr/Comment.nvim)
@@ -35,7 +32,7 @@ List of plugins:
 - [vimtex](https://github.com/lervag/vimtex)
 - [which-key](https://github.com/folke/which-key.nvim)
 
-LSP setup:
+### LSP setup:
 - [fidget.nvim](https://github.com/j-hui/fidget.nvim)
 - [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
@@ -47,3 +44,8 @@ LSP setup:
     - [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
     - [cmp-nvim-lua](https://github.com/hrsh7th/cmp-nvim-lua)
     - [cmp-path](https://github.com/hrsh7th/cmp-path)
+---
+### Inspirations:
+- [ThePrimeagen/init.lua](https://github.com/ThePrimeagen/init.lua)
+- [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
+- [m1chaelwilliams/my-nvim-config](https://github.com/m1chaelwilliams/my-nvim-config)
