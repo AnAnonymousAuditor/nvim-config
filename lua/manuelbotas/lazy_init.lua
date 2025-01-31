@@ -21,6 +21,9 @@ require("lazy").setup({
         notify = false,
     },
     change_detection = { notify = false },
+    performance = {
+        rtp = { reset = false },
+    },
     ui = {
         icons = {
             plugin = " ",
