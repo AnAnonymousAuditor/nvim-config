@@ -23,4 +23,14 @@ return {
         config = true,
         opts = ...,
     },
+
+    {
+        "maxmx03/fluoromachine.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {
+            -- glow = false,
+            theme = "retrowave",
+        },
+    },
 }

@@ -2,7 +2,7 @@ require("manuelbotas.set")
 require("manuelbotas.remap")
 require("manuelbotas.lazy_init")
 
-vim.cmd.colorscheme("gruvbox-material")
+vim.cmd.colorscheme("fluoromachine")
 
 local augroup = vim.api.nvim_create_augroup
 local manuelGroup = augroup("ManuelBotas", {})
