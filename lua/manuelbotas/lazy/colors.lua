@@ -1,5 +1,10 @@
 return {
     {
+        "xiyaowong/transparent.nvim",
+        lazy = false,
+    },
+
+    {
         "rose-pine/neovim",
         name = "rose-pine",
     },
@@ -8,7 +13,7 @@ return {
         "sainnhe/gruvbox-material",
         lazy = false,
         priority = 1000,
-        config = function()
+        init = function()
             local g = vim.g
             g.gruvbox_material_background = "medium"
             g.gruvbox_material_foreground = "material"
@@ -31,6 +36,7 @@ return {
         opts = {
             -- glow = false,
             theme = "retrowave",
+            transparent = true,
         },
     },
 }
