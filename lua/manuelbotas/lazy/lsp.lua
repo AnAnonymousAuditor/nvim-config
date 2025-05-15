@@ -1,8 +1,8 @@
 return {
     "neovim/nvim-lspconfig",
     dependencies = {
-        "williamboman/mason.nvim",
-        "williamboman/mason-lspconfig.nvim",
+        "mason-org/mason.nvim",
+        "mason-org/mason-lspconfig.nvim",
         "hrsh7th/nvim-cmp",
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
@@ -23,15 +23,7 @@ return {
         "onsails/lspkind.nvim",
     },
     config = function()
-        local lspconfig = require("lspconfig")
         local cmp = require("cmp")
-        local cmp_lsp = require("cmp_nvim_lsp")
-        local lsp_capabilities = vim.tbl_deep_extend(
-            "force",
-            {},
-            vim.lsp.protocol.make_client_capabilities(),
-            cmp_lsp.default_capabilities()
-        )
 
         require("fidget").setup({
             notification = {
@@ -43,18 +35,6 @@ return {
         require("mason").setup()
         require("mason-lspconfig").setup({
             ensure_installed = { "lua_ls" },
-            handlers = {
-                function(server)
-                    lspconfig[server].setup({
-                        capabilities = lsp_capabilities,
-                    })
-                end,
-                -- ["lua_ls"] = function()
-                --     lspconfig.lua_ls.setup({
-                --         capabilities = lsp_capabilities,
-                --     })
-                -- end,
-            },
         })
 
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
