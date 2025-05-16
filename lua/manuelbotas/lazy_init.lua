@@ -14,7 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     spec = "manuelbotas.lazy",
     install = {
-        colorscheme = { "gruvbox-material" },
+        colorscheme = { "fluoromachine" },
     },
     checker = {
         enabled = true,
