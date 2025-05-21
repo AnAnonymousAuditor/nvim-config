@@ -1,7 +1,9 @@
-### Plugin manager:
+# My Neovim Configuration
+
+## Plugin manager:
 - [lazy.nvim](https://github.com/folke/lazy.nvim)
 
-### List of plugins:
+## List of plugins:
 - [cellular-automaton.nvim](https://github.com/eandrju/cellular-automaton.nvim)
 - [nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)
 - [Comment.nvim](https://github.com/numToStr/Comment.nvim)
@@ -21,31 +23,30 @@
 - [oil.nvim](https://github.com/stevearc/oil.nvim)
 - [pear-tree](https://github.com/tmsvg/pear-tree)
 - [render-markdown](https://github.com/MeanderingProgrammer/render-markdown.nvim)
+- [smear-cursor.nvim](https://github.com/sphamba/smear-cursor.nvim)
+- [nvim-spider](https://github.com/chrisgrieser/nvim-spider)
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
     - [telescope-ui-select.nvim](https://github.com/nvim-telescope/telescope-ui-select.nvim)
     - [telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim)
     - [telescope-live-grep-args.nvim](https://github.com/nvim-telescope/telescope-live-grep-args.nvim)
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
-- [treesj](https://github.com/Wansmer/treesj)
 - [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
+- [treesj](https://github.com/Wansmer/treesj)
 - [undotree](https://github.com/mbbill/undotree)
 - [vimtex](https://github.com/lervag/vimtex)
 - [which-key](https://github.com/folke/which-key.nvim)
 
-### LSP setup:
+## LSP setup:
+- [blink.cmp](https://github.com/saghen/blink.cmp)
 - [fidget.nvim](https://github.com/j-hui/fidget.nvim)
+- [lazydev.nvim](https://github.com/folke/lazydev.nvim)
 - [LuaSnip](https://github.com/L3MON4D3/LuaSnip)
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 - [mason.nvim](https://github.com/williamboman/mason.nvim)
 - [mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim)
-- [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
-    - [cmp-buffer](https://github.com/hrsh7th/cmp-buffer)
-    - [cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)
-    - [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
-    - [cmp-nvim-lua](https://github.com/hrsh7th/cmp-nvim-lua)
-    - [cmp-path](https://github.com/hrsh7th/cmp-path)
 ---
-### Inspirations:
+## Inspirations:
 - [ThePrimeagen/init.lua](https://github.com/ThePrimeagen/init.lua)
 - [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
-- [m1chaelwilliams/my-nvim-config](https://github.com/m1chaelwilliams/my-nvim-config)
+    - [kickstart-modular.nvim](https://github.com/dam9000/kickstart-modular.nvim)
+- [m1chaelwilliams/my-nvim-config](https://github.com/vimichael/my-nvim-config)
