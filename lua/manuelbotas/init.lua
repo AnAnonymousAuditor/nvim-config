@@ -25,7 +25,9 @@ autocmd("BufWritePre", {
     group = manuelGroup,
     pattern = "*",
     callback = function()
-        if vim.bo.ft == "markdown" then
+        if vim.bo.ft == "gitcommit" then
+            return
+        elseif vim.bo.ft == "markdown" then
             vim.cmd([[%s/^\s\+$//e]])
         else
             vim.cmd([[%s/\s\+$//e]])
