@@ -1,34 +1,43 @@
 return {
     "nvim-treesitter/nvim-treesitter",
-    branch = "master",
+    branch = "main",
     lazy = false,
     build = ":TSUpdate",
-    main = "nvim-treesitter.configs",
     opts = {
-        -- A list of parser names, or "all" (the five listed parsers should always be installed)
-        ensure_installed = { "javascript", "java", "python", "c", "lua", "vim", "vimdoc", "query" },
-
-        -- Install parsers synchronously (only applied to `ensure_installed`)
-        sync_install = false,
-
-        -- Automatically install missing parsers when entering buffer
-        -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-        auto_install = true,
-
-        highlight = {
-            enable = true,
-
-            -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-            -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-            -- Using this option may slow down your editor, and you may see some duplicate highlights.
-            -- Instead of true it can also be a list of languages
-            additional_vim_regex_highlighting = false,
-            disable = { "latex" },
-        },
+        install_dir = vim.fn.stdpath("data") .. "/site",
     },
     config = function()
-        vim.filetype.add({
-            pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
+        local ts = require("nvim-treesitter")
+        local group = vim.api.nvim_create_augroup("custom-treesitter", { clear = true })
+        local ensure_install = {
+            "javascript",
+            "java",
+            "python",
+            "c",
+            "lua",
+            "vim",
+            "vimdoc",
+            "query",
+        }
+        ts.install(ensure_install)
+
+        -- Snippet yoinked from https://github.com/tjdevries/config.nvim/blob/7cad8009177b4c10083b21cfa14f8eebe308745e/lua/custom/treesitter.lua
+        -- local syntax_on = {}
+        vim.api.nvim_create_autocmd("FileType", {
+            group = group,
+            callback = function(args)
+                local bufnr = args.buf
+                local ok, parser = pcall(vim.treesitter.get_parser, bufnr)
+                if not ok or not parser then
+                    return
+                end
+                pcall(vim.treesitter.start)
+
+                -- local ft = vim.bo[bufnr].filetype
+                -- if syntax_on[ft] then
+                --     vim.bo[bufnr].syntax = "on"
+                -- end
+            end,
         })
     end,
 }

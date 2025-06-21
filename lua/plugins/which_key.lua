@@ -5,12 +5,16 @@ return {
         -- your configuration comes here
         -- or leave it empty to use the default settings
         expand = 1,
+        keys = {
+            scroll_down = "<S-C-D>",
+            scroll_up = "<S-C-U>",
+        },
         spec = {
             { "<leader>c", group = "[C]ode" },
             { "<leader>g", group = "[G]oto" },
             { "<leader>h", group = "[H]arpoon" },
             { "<leader>s", group = "[S]earch" },
-        }
+        },
     },
     keys = {
         {

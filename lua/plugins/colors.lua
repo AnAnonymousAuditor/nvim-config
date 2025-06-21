@@ -5,6 +5,12 @@ return {
     },
 
     {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        priority = 1000,
+    },
+
+    {
         "maxmx03/fluoromachine.nvim",
         lazy = false,
         priority = 1000,

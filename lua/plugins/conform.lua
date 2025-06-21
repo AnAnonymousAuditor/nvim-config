@@ -20,6 +20,7 @@ return {
             lua = { "stylua" },
             sh = { "shfmt" },
             zsh = { "shfmt" },
+            markdown = { "injected" },
             -- python = { "isort", "black" },
             -- javascript = { { "prettierd", "prettier" } },
         },
