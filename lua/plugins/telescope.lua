@@ -16,7 +16,6 @@ return {
             version = "^1.1.0",
         },
     },
-
     config = function()
         local telescope = require("telescope")
         telescope.setup({
@@ -29,21 +28,6 @@ return {
         telescope.load_extension("fzf")
         telescope.load_extension("ui-select")
         telescope.load_extension("live_grep_args")
-
-        -- HACK: workaround till plenary (and thus telescope) supports vim.o.winborder
-        -- From https://github.com/nvim-telescope/telescope.nvim/issues/3436#issuecomment-2756267300
-        vim.api.nvim_create_autocmd("User", {
-            pattern = "TelescopeFindPre",
-            callback = function()
-                vim.opt_local.winborder = "none"
-                vim.api.nvim_create_autocmd("WinLeave", {
-                    once = true,
-                    callback = function()
-                        vim.opt_local.winborder = "rounded"
-                    end,
-                })
-            end,
-        })
 
         local builtin = require("telescope.builtin")
         vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "Search files" })

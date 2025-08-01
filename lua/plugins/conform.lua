@@ -4,40 +4,40 @@ return {
     cmd = { "ConformInfo" },
     keys = {
         {
-            -- Customize or remove this keymap to your liking
             "<leader>f",
             function()
-                require("conform").format({ async = true, lsp_fallback = true })
+                require("conform").format({ async = true })
             end,
             mode = "",
             desc = "Format buffer",
         },
     },
-    -- Everything in opts will be passed to setup()
     opts = {
-        -- Define your formatters
+        -- Set this to change the default values when calling conform.format()
+        -- This will also affect the default values for format_on_save/format_after_save
+        default_format_opts = {
+            lsp_format = "fallback",
+        },
         formatters_by_ft = {
             lua = { "stylua" },
-            sh = { "shfmt" },
-            zsh = { "shfmt" },
+            -- sh = { "shfmt" },
+            -- zsh = { "shfmt" },
             markdown = { "injected" },
             -- python = { "isort", "black" },
             -- javascript = { { "prettierd", "prettier" } },
         },
         -- Set up format-on-save
         -- format_on_save = { timeout_ms = 500, lsp_fallback = true },
-        -- Customize formatters
         formatters = {
-            shfmt = {
-                prepend_args = { "-i", "4" },
-            },
+            -- shfmt = {
+            --     prepend_args = { "-i", "4" },
+            -- },
             stylua = {
                 prepend_args = { "--indent-type", "Spaces" },
             },
         },
     },
     init = function()
-        -- If you want the formatexpr, here is the place to set it
         vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
     end,
 }

@@ -3,9 +3,9 @@ return {
     branch = "main",
     lazy = false,
     build = ":TSUpdate",
-    opts = {
-        install_dir = vim.fn.stdpath("data") .. "/site",
-    },
+    -- opts = {
+    --     -- install_dir = vim.fn.stdpath("data") .. "/site",
+    -- },
     config = function()
         local ts = require("nvim-treesitter")
         local group = vim.api.nvim_create_augroup("custom-treesitter", { clear = true })
@@ -32,11 +32,8 @@ return {
                     return
                 end
                 pcall(vim.treesitter.start)
-
-                -- local ft = vim.bo[bufnr].filetype
-                -- if syntax_on[ft] then
-                --     vim.bo[bufnr].syntax = "on"
-                -- end
+                vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+                vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
             end,
         })
     end,

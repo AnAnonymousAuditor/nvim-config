@@ -1,11 +1,12 @@
 return {
-    'ThePrimeagen/harpoon',
-    branch = 'harpoon2',
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
     dependencies = {
-        'nvim-lua/plenary.nvim',
-        'nvim-telescope/telescope.nvim'
+        "nvim-lua/plenary.nvim",
+        "nvim-telescope/telescope.nvim",
     },
     config = function()
+        -- stylua: ignore start
         local harpoon = require("harpoon")
 
         -- REQUIRED
@@ -49,5 +50,6 @@ return {
 
         vim.keymap.set("n", "<leader>ho", function() toggle_telescope(harpoon:list()) end,
             { desc = "Open harpoon window" })
-    end
+        -- stylua: ignore end
+    end,
 }

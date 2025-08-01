@@ -2,6 +2,7 @@ return {
     "folke/flash.nvim",
     event = "VeryLazy",
     opts = {},
+    -- stylua: ignore
     keys = {
         { "zk", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
         { "zK", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },

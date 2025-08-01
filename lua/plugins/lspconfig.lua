@@ -42,6 +42,7 @@ return {
                     end
                 end
                 local client = vim.lsp.get_client_by_id(event.data.client_id)
+                -- stylua: ignore
                 if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_documentHighlight, event.buf) then
                     local highlight_augroup = vim.api.nvim_create_augroup("lsp-highlight", { clear = false })
                     vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
@@ -65,6 +66,7 @@ return {
                     })
                 end
 
+                -- stylua: ignore
                 if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
                     lspmap("<leader>ch", function ()
                         vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
@@ -108,7 +110,9 @@ return {
         local servers = {
             mason = {
                 asm_lsp = {},
-                bashls = {},
+                bashls = {
+                    filetypes = { "bash", "sh", "zsh" },
+                },
                 clangd = {},
                 cssls = {},
                 gopls = {},
@@ -128,7 +132,10 @@ return {
             "shfmt",
             "stylua",
         })
-        require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
+        require("mason-tool-installer").setup({
+            ensure_installed = ensure_installed,
+            -- auto_update = true,
+        })
 
         for server, config in pairs(vim.tbl_extend("keep", servers.mason, servers.other)) do
             if not vim.tbl_isempty(config) then

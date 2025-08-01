@@ -38,6 +38,7 @@ require("lazy").setup({
         rtp = { reset = false },
     },
     ui = {
+        border = "rounded",
         icons = {
             plugin = " ",
         },
