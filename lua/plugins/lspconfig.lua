@@ -113,29 +113,32 @@ return {
                 bashls = {
                     filetypes = { "bash", "sh", "zsh" },
                 },
-                clangd = {},
                 cssls = {},
                 gopls = {},
                 hyprls = {},
+                jdtls = {},
                 jsonls = {},
                 lua_ls = {},
                 r_language_server = {},
+                stylua = {},
                 taplo = {},
                 tinymist = {},
             },
-            other = {},
+            other = {
+                ccls = {},
+            },
         }
 
         local ensure_installed = vim.tbl_keys(servers.mason or {})
         vim.list_extend(ensure_installed, {
             "shellcheck",
             "shfmt",
-            "stylua",
         })
         require("mason-tool-installer").setup({
             ensure_installed = ensure_installed,
             -- auto_update = true,
         })
+        vim.cmd.MasonToolsClean()
 
         for server, config in pairs(vim.tbl_extend("keep", servers.mason, servers.other)) do
             if not vim.tbl_isempty(config) then
